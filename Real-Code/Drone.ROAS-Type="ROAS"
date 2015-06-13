@@ -1,3 +1,8 @@
 #include <"Fly-libary">
 #include <"Remote-libary">
-
+void setup(Type="Drone") {
+pinMode(A1, BOTH);
+pinMode(A2, OUTPUT);
+pinMode(13, OUTPUT);
+pinMode(CAM_PIN, 11, INPUT);
+}
