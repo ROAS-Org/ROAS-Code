@@ -1,8 +1,20 @@
 #include <"Fly-libary">
 #include <"Remote-libary">
 void setup(Type="Drone") {
-pinMode(A1, BOTH);
-pinMode(A2, OUTPUT);
-pinMode(13, OUTPUT);
-pinMode(CAM_PIN, 11, INPUT);
+pinMode(A1, BOTH); // Remote Pin
+pinMode(A2, OUTPUT); // Wings
+pinMode(13, OUTPUT); // Power Light
+pinMode(CAM_PIN, 11, INPUT); // Drone Camra
+pinMode(10, OUTPUT); // Battery Level Indicator
+}
+
+void loop(1) {
+analogWrite(10, BATT_LEV_analogWrite);
+digitalWrite(13, BATT_ON_OFF);
+}
+
+void loop(2) {
+Remote.send(Cam.view(11));
+Wing.do(= Remote.Signal());
+Remote.send(Cam.view(11));
 }
