@@ -4,7 +4,7 @@ void setup(Type="Drone") {
 pinMode(A1, BOTH); // Remote Pin
 pinMode(A2, OUTPUT); // Wings
 pinMode(13, OUTPUT); // Power Light
-pinMode(CAM_PIN, 11, INPUT); // Drone Camra
+pinMode(CAM_PIN, 11, BOTH); // Drone Camra
 pinMode(10, OUTPUT); // Battery Level Indicator
 }
 
@@ -18,3 +18,9 @@ Remote.send(Cam.view(11));
 Wing.do(= Remote.Signal());
 Remote.send(Cam.view(11));
 }
+void loop(3) {
+if (Cam.Taking(= YES)) {
+Cam.AnalogFlash(50);
+}
+}
+
